@@ -37,3 +37,9 @@ function applyCanvasOpacity(canvas, opacity) {
   ctx.drawImage(tempCanvas, 0, 0);
   ctx.globalAlpha = 1.0; // 重置
 }
+
+function to2digit(num) {
+  if (num < 0) return `-${to2digit(Math.abs(num))}`;
+  if (num >= 0 && num < 10) return `0${num}`;
+  return num.toString();
+}

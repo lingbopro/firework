@@ -199,13 +199,16 @@ let particles = [];
 
 // 创建烟花的频率控制
 let frameCount = 0;
-const fireworkInterval = 100; // 每100帧创建一个烟花
+let fireworkInterval = 100; // 每100帧创建一个烟花
+function setFireworkInterval(value) {
+  fireworkInterval = value;
+}
 
 // 动画循环
 function animate(time = 0) {
   requestAnimationFrame(animate);
 
-  console.debug('Animate frame', time);
+  // console.debug('Animate frame', time);
   frameCount++;
 
   // 清除画布，添加淡出效果

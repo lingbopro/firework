@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            user-select: none;
         }
         
         body {
@@ -29,16 +30,86 @@
         }
         
         #firework-canvas {
-          z-index: -1;
+          z-index: 0;
         }
         #bg-canvas {
-          z-index: -2;
+          z-index: -1;
+        }
+        
+        #title-layer {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 80px;
+          pointer-events: none;
+          z-index: 1;
+        }
+        #title-container {
+          display: flex;
+          flex-direction: column;
+          color: #fef5d9;
+          font-size: 1.75rem;
+          font-weight: bold;
+          text-align: center;
+          font-family: 'Noto Sans SC', 'Noto Sans', 'Microsoft YaHei UI', 'Segoe UI', Sans-Serif;
+        }
+        #title-line2 {
+          color: #fff8e3;
+          font-size: 3rem;
+        }
+        #remaining-time {
+          color: #fff7b0;
+          font-size: 4rem;
+        }
+
+        button {
+          padding: 12px;
+          border: none;
+          border-radius: 16px;
+          background-color: #ffc868;
+          color: white;
+          font-size: 1.3rem;
+          font-weight: bold;
+          transition-duration: 0.4s;
+        }
+        button:hover, button:active {
+          background-color: #ffbf2c;
+          transform: scale(0.95);
+        }
+        button:active {
+          transform: scale(0.9);
+        }
+        #go-btn {
+          position: fixed;
+          right: 20px;
+          bottom: 20px;
+        }
+        #go-btn .arrow {
+          padding-inline: 4px;
         }
     </style>
 </head>
 <body>
     <canvas class="canva" id="bg-canvas"></canvas>
     <canvas class="canva" id="firework-canvas"></canvas>
+
+    <div id="title-layer">
+      <div id="title-container">
+        <div id="title-line1">距离</div>
+        <div id="title-line2">2026年春节</div>
+        <div id="title-line3">还有</div>
+        <div id="remaining-time">loading...</div>
+      </div>
+    </div>
+    <button id="go-btn">
+      直接过年
+      <b class="arrow">⟩</b>
+    </button>
 
     <script defer src="./utils.js"></script>
     <script defer src="./main.js"></script>
