@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firework</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #00001f;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .canva {
+            display: block;
+            position: fixed;
+            left: 0;
+            top: 0;
+            opacity: 0.8;
+            z-index: -1;
+            cursor: crosshair;
+        }
+        
+        #firework-canvas {
+          z-index: -1;
+        }
+        #bg-canvas {
+          z-index: -2;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="canva" id="bg-canvas"></canvas>
+    <canvas class="canva" id="firework-canvas"></canvas>
+
+    <script defer src="./utils.js"></script>
+    <script defer src="./main.js"></script>
+</body>
+</html>
+
