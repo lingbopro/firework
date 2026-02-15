@@ -17,6 +17,7 @@
             overflow: hidden;
             width: 100vw;
             height: 100vh;
+            color: white;
         }
         
         .canva {
@@ -67,6 +68,22 @@
           font-size: 4rem;
         }
 
+        #bottom-row {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: space-between;
+          padding: 20px;
+        }
+        #tip {
+          font-size: 0.75rem;
+        }
+
         button {
           padding: 12px;
           border: none;
@@ -83,11 +100,6 @@
         }
         button:active {
           transform: scale(0.9);
-        }
-        #go-btn {
-          position: fixed;
-          right: 20px;
-          bottom: 20px;
         }
         #go-btn .arrow {
           padding-inline: 4px;
@@ -106,10 +118,17 @@
         <div id="remaining-time">loading...</div>
       </div>
     </div>
-    <button id="go-btn">
-      直接过年
-      <b class="arrow">⟩</b>
-    </button>
+    <div id="bottom-row">
+      <div id="tip">
+        Tip: 可以点击放烟花哦～
+        <br />
+        by lingbopro
+        </div>
+      <button id="go-btn">
+        直接过年
+        <b class="arrow">⟩</b>
+      </button>
+    </div>
 
     <script defer src="./utils.js"></script>
     <script defer src="./main.js"></script>
